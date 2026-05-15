@@ -94,7 +94,7 @@ export interface PredictionResponse {
 
 export async function predictImage(file: File): Promise<PredictionResponse> {
   const formData = new FormData()
-  formData.append("file", file)
+  formData.append("image", file)
   const { data } = await api.post<PredictionResponse>("/predict", formData, {
     headers: { "Content-Type": "multipart/form-data" },
   })

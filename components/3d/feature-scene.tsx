@@ -56,7 +56,7 @@ function DataStream({ start, end, speed }: {
       ref.current.position.x = start[0] + (end[0] - start[0]) * t
       ref.current.position.y = start[1] + (end[1] - start[1]) * t
       ref.current.position.z = start[2] + (end[2] - start[2]) * t
-      ref.current.material.opacity = Math.sin(t * Math.PI)
+      ;(ref.current.material as THREE.Material).opacity = Math.sin(t * Math.PI)
     }
   })
 
@@ -151,7 +151,7 @@ function HexCell({ position, delay }: { position: [number, number, number]; dela
   useFrame((state) => {
     if (ref.current) {
       const pulse = Math.sin(state.clock.elapsedTime * 2 + delay) > 0.8
-      ref.current.material.opacity = pulse ? 0.3 : 0.1
+      ;(ref.current.material as THREE.Material).opacity = pulse ? 0.3 : 0.1
     }
   })
 

@@ -22,37 +22,76 @@ import { Button } from "@/components/ui/button"
 import { Slider } from "@/components/ui/slider"
 import { cn } from "@/lib/utils"
 
-const changeData = [
+const scenarios = [
   {
-    id: 1,
-    type: "building",
-    label: "New Construction",
-    change: "+12.4%",
-    trend: "up",
-    icon: Building2,
-    color: "#3B82F6",
-    description: "3 new structures detected near station area"
+    id: "encroachment",
+    label: "Railway Encroachment",
+    description: "Unauthorized construction activity detected within the railway right-of-way corridor, posing safety and operational risks.",
+    before: "/images/sat-before-encroachment.png",
+    after: "/images/sat-after-encroachment.png",
+    beforeLabel: "BEFORE — Jan 2024 · Clear Railway Corridor",
+    afterLabel: "AFTER — May 2025 · Illegal Structures Detected",
+    indicators: [
+      { top: "20%", left: "25%", w: 28, h: 18, color: "#EF4444", label: "Unauthorized Structure" },
+      { top: "60%", left: "55%", w: 24, h: 14, color: "#F59E0B", label: "Encroachment Zone" },
+    ],
+    changes: [
+      { id: 1, label: "New Structures", change: "+12.4%", trend: "up" as const, icon: Building2, color: "#EF4444", description: "14 unauthorized structures within 50m of tracks" },
+      { id: 2, label: "Vegetation Cleared", change: "-6.1%", trend: "down" as const, icon: TreePine, color: "#10B981", description: "Land cleared for illegal construction" },
+      { id: 3, label: "Right-of-Way Breach", change: "+18.7%", trend: "up" as const, icon: AlertTriangle, color: "#F59E0B", description: "Safety corridor compromised in 3 sectors" },
+    ],
+    impacts: [
+      { label: "Operational Safety", severity: "high" as const, value: "Track clearance reduced to 8m in 3 zones" },
+      { label: "Legal Compliance", severity: "high" as const, value: "14 structures violate Railway Act Section 175" },
+      { label: "Service Disruption Risk", severity: "medium" as const, value: "Potential speed restriction on 2.1km stretch" },
+    ],
   },
   {
-    id: 2,
-    type: "vegetation",
-    label: "Vegetation Loss",
-    change: "-8.2%",
-    trend: "down",
-    icon: TreePine,
-    color: "#10B981",
-    description: "Cleared area along track corridor"
+    id: "vegetation",
+    label: "Vegetation Change",
+    description: "Significant deforestation and vegetation health decline detected along the railway corridor, increasing erosion risk.",
+    before: "/images/sat-before-vegetation.png",
+    after: "/images/sat-after-vegetation.png",
+    beforeLabel: "BEFORE — Jan 2024 · Healthy Green Cover",
+    afterLabel: "AFTER — May 2025 · Deforestation Detected",
+    indicators: [
+      { top: "35%", left: "40%", w: 32, h: 22, color: "#EF4444", label: "Deforestation" },
+      { top: "65%", left: "20%", w: 20, h: 16, color: "#F59E0B", label: "Soil Erosion" },
+    ],
+    changes: [
+      { id: 1, label: "Green Cover Loss", change: "-24.8%", trend: "down" as const, icon: TreePine, color: "#EF4444", description: "Significant deforestation along rail corridor" },
+      { id: 2, label: "Bare Soil Increase", change: "+31.2%", trend: "up" as const, icon: Building2, color: "#F59E0B", description: "Exposed earth prone to erosion" },
+      { id: 3, label: "NDVI Drop", change: "-0.34", trend: "down" as const, icon: Droplets, color: "#06B6D4", description: "Vegetation health index declined sharply" },
+    ],
+    impacts: [
+      { label: "Slope Stability", severity: "high" as const, value: "Embankment erosion risk elevated in 4 sections" },
+      { label: "Environmental Compliance", severity: "medium" as const, value: "Green cover below mandated 40% threshold" },
+      { label: "Biodiversity", severity: "low" as const, value: "Wildlife corridor connectivity reduced by 18%" },
+    ],
   },
   {
-    id: 3,
-    type: "water",
-    label: "Water Body Change",
-    change: "-2.1%",
-    trend: "down",
-    icon: Droplets,
-    color: "#06B6D4",
-    description: "Slight reduction in pond area"
-  }
+    id: "drainage",
+    label: "Drainage / Flooding",
+    description: "Post-monsoon waterlogging and drainage system overflow detected, causing track submersion and operational disruptions.",
+    before: "/images/sat-before-drainage.png",
+    after: "/images/sat-after-drainage.png",
+    beforeLabel: "BEFORE — Pre-Monsoon · Normal Drainage",
+    afterLabel: "AFTER — Post-Monsoon · Waterlogging Detected",
+    indicators: [
+      { top: "40%", left: "30%", w: 36, h: 24, color: "#3B82F6", label: "Flood Spread" },
+      { top: "25%", left: "60%", w: 20, h: 14, color: "#EF4444", label: "Track Submerged" },
+    ],
+    changes: [
+      { id: 1, label: "Water Spread", change: "+340%", trend: "up" as const, icon: Droplets, color: "#3B82F6", description: "Massive waterlogging across railway embankment" },
+      { id: 2, label: "Track Submersion", change: "2.1 km", trend: "up" as const, icon: AlertTriangle, color: "#EF4444", description: "Railway track under water in flood zone" },
+      { id: 3, label: "Drainage Overflow", change: "+62%", trend: "up" as const, icon: Building2, color: "#F59E0B", description: "Canal breach near railway bridge" },
+    ],
+    impacts: [
+      { label: "Track Availability", severity: "high" as const, value: "2.1km track submerged, services suspended" },
+      { label: "Infrastructure Damage", severity: "high" as const, value: "Ballast washout in 3 locations" },
+      { label: "Drainage Capacity", severity: "medium" as const, value: "System exceeded 140% design capacity" },
+    ],
+  },
 ]
 
 const timelineData = [
@@ -66,6 +105,9 @@ const timelineData = [
 
 export default function ChangeDetectionPage() {
   const [sliderPosition, setSliderPosition] = useState([50])
+  const [activeScenario, setActiveScenario] = useState(0)
+
+  const scenario = scenarios[activeScenario]
 
   return (
     <div className="flex h-[calc(100vh-72px)]">
@@ -73,25 +115,47 @@ export default function ChangeDetectionPage() {
       <div className="flex-1 flex flex-col">
         {/* Toolbar */}
         <div className="h-14 border-b border-white/[0.04] bg-[#080808] flex items-center justify-between px-5">
-          <div className="flex items-center gap-5">
-            <div className="flex items-center gap-2.5 text-[12px]">
-              <Calendar className="w-3.5 h-3.5 text-white/30" />
-              <span className="text-white/40">Before:</span>
-              <span className="text-white font-medium">Jan 2024</span>
-            </div>
-            <ArrowLeftRight className="w-4 h-4 text-white/20" />
-            <div className="flex items-center gap-2.5 text-[12px]">
-              <Calendar className="w-3.5 h-3.5 text-white/30" />
-              <span className="text-white/40">After:</span>
-              <span className="text-white font-medium">May 2025</span>
-            </div>
+          <div className="flex items-center gap-3">
+            {/* Scenario Selector Tabs */}
+            {scenarios.map((s, i) => (
+              <button
+                key={s.id}
+                onClick={() => { setActiveScenario(i); setSliderPosition([50]) }}
+                className={cn(
+                  "px-3.5 py-1.5 rounded-lg text-[12px] font-medium transition-all duration-200",
+                  activeScenario === i
+                    ? "bg-white/[0.08] text-white border border-white/[0.1]"
+                    : "text-white/40 hover:text-white/70 hover:bg-white/[0.03] border border-transparent"
+                )}
+              >
+                {s.label}
+              </button>
+            ))}
           </div>
           <div className="flex items-center gap-1.5">
-            <Button variant="ghost" size="sm" className="h-8 px-3 text-[12px] text-white/40 hover:text-white/70 hover:bg-white/[0.04] rounded-lg">
+            <Button variant="ghost" size="sm" className="h-8 px-3 text-[12px] text-white/40 hover:text-white/70 hover:bg-white/[0.04] rounded-lg"
+              onClick={() => {
+                const s = scenarios[activeScenario]
+                const w = window.open('', '_blank')
+                if (w) {
+                  w.document.write(`<!DOCTYPE html><html><head><title>Change Detection — ${s.label}</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:system-ui,-apple-system,sans-serif;background:#fff;color:#111;padding:48px 56px;max-width:800px;margin:0 auto}h1{font-size:22px;margin-bottom:4px}h2{font-size:14px;color:#666;margin-bottom:24px;font-weight:400}.section{margin-top:24px;border-top:1px solid #eee;padding-top:16px}h3{font-size:13px;text-transform:uppercase;letter-spacing:1.5px;color:#999;margin-bottom:12px}.row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:13px}.label{color:#888}.val{font-weight:600}.footer{margin-top:40px;text-align:center;font-size:10px;color:#bbb}</style></head><body><h1>Change Detection Report</h1><h2>${s.label} — ${s.description}</h2><div class="section"><h3>Analysis Period</h3><div class="row"><span class="label">From</span><span class="val">Jan 2024</span></div><div class="row"><span class="label">To</span><span class="val">May 2025</span></div></div><div class="section"><h3>Detected Changes</h3>${s.changes.map(c => `<div class="row"><span class="label">${c.label}</span><span class="val">${c.change} — ${c.description}</span></div>`).join('')}</div><div class="section"><h3>Impact Assessment</h3>${s.impacts.map(imp => `<div class="row"><span class="label">${imp.label}</span><span class="val" style="color:${imp.severity === 'high' ? '#EF4444' : imp.severity === 'medium' ? '#F59E0B' : '#10B981'}">${imp.severity.toUpperCase()} — ${imp.value}</span></div>`).join('')}</div><div class="footer">Generated by GeoVision AI — Geospatial Intelligence Platform • ${new Date().toISOString()}</div></body></html>`)
+                  w.document.close()
+                  setTimeout(() => w.print(), 500)
+                }
+              }}
+            >
               <Download className="w-3.5 h-3.5 mr-2" />
               Export
             </Button>
-            <Button variant="ghost" size="sm" className="h-8 px-3 text-[12px] text-white/40 hover:text-white/70 hover:bg-white/[0.04] rounded-lg">
+            <Button variant="ghost" size="sm" className="h-8 px-3 text-[12px] text-white/40 hover:text-white/70 hover:bg-white/[0.04] rounded-lg"
+              onClick={() => {
+                const url = `${window.location.origin}/dashboard/change-detection?scenario=${scenarios[activeScenario].id}`
+                navigator.clipboard.writeText(url)
+                const btn = document.activeElement as HTMLButtonElement
+                const orig = btn?.textContent
+                if (btn) { btn.textContent = "✓ Copied!"; setTimeout(() => { btn.textContent = orig || "Share" }, 1500) }
+              }}
+            >
               <Share2 className="w-3.5 h-3.5 mr-2" />
               Share
             </Button>
@@ -115,12 +179,12 @@ export default function ChangeDetectionPage() {
                 style={{ clipPath: `inset(0 ${100 - sliderPosition[0]}% 0 0)` }}
               >
                 <img
-                  src="/images/5.png"
+                  src={scenario.before}
                   alt="Before"
-                  className="w-full h-full object-cover filter grayscale-[30%]"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute top-5 left-5 px-3 py-2 rounded-xl bg-black/60 backdrop-blur-xl border border-white/[0.08] text-[11px] font-mono text-white/80">
-                  BEFORE — Jan 2024
+                  {scenario.beforeLabel}
                 </div>
               </div>
 
@@ -130,12 +194,12 @@ export default function ChangeDetectionPage() {
                 style={{ clipPath: `inset(0 0 0 ${sliderPosition[0]}%)` }}
               >
                 <img
-                  src="/images/6.png"
+                  src={scenario.after}
                   alt="After"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-5 right-5 px-3 py-2 rounded-xl bg-black/60 backdrop-blur-xl border border-white/[0.08] text-[11px] font-mono text-white/80">
-                  AFTER — May 2025
+                  {scenario.afterLabel}
                 </div>
               </div>
 
@@ -150,27 +214,30 @@ export default function ChangeDetectionPage() {
               </div>
 
               {/* Change Indicators */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5, duration: 0.4 }}
-                className="absolute top-[25%] left-[30%] w-24 h-16 border border-amber-500/60 rounded-lg bg-amber-500/10 backdrop-blur-sm"
-              >
-                <div className="absolute -top-7 left-0 text-[10px] bg-amber-500 text-black px-2.5 py-1 rounded-md font-semibold whitespace-nowrap">
-                  New Building
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.7, duration: 0.4 }}
-                className="absolute top-[55%] right-[25%] w-32 h-20 border border-red-500/60 rounded-lg bg-red-500/10 backdrop-blur-sm"
-              >
-                <div className="absolute -top-7 left-0 text-[10px] bg-red-500 text-white px-2.5 py-1 rounded-md font-semibold whitespace-nowrap">
-                  Vegetation Loss
-                </div>
-              </motion.div>
+              {scenario.indicators.map((ind, idx) => (
+                <motion.div
+                  key={`${scenario.id}-${idx}`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.5 + idx * 0.2, duration: 0.4 }}
+                  className="absolute border rounded-lg backdrop-blur-sm"
+                  style={{
+                    top: ind.top,
+                    left: ind.left,
+                    width: `${ind.w}%`,
+                    height: `${ind.h}%`,
+                    borderColor: `${ind.color}99`,
+                    backgroundColor: `${ind.color}15`,
+                  }}
+                >
+                  <div
+                    className="absolute -top-7 left-0 text-[10px] text-white px-2.5 py-1 rounded-md font-semibold whitespace-nowrap"
+                    style={{ backgroundColor: ind.color }}
+                  >
+                    {ind.label}
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
 
@@ -245,7 +312,7 @@ export default function ChangeDetectionPage() {
           <div>
             <h4 className="text-[10px] font-semibold text-white/30 uppercase tracking-[0.15em] mb-3 px-1">Detected Changes</h4>
             <div className="space-y-2">
-              {changeData.map((change) => (
+              {scenario.changes.map((change) => (
                 <motion.div
                   key={change.id}
                   initial={{ opacity: 0, x: -10 }}

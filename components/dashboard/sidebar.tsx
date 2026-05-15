@@ -177,14 +177,48 @@ export function DashboardHeader() {
 
       <div className="flex items-center gap-2">
         {/* Notifications */}
-        <Button 
-          variant="ghost" 
-          size="icon" 
-          className="relative w-10 h-10 text-white/40 hover:text-white/70 hover:bg-white/[0.04] rounded-xl"
-        >
-          <Bell className="w-[18px] h-[18px]" />
-          <span className="absolute top-2.5 right-2.5 w-1.5 h-1.5 rounded-full bg-amber-500" />
-        </Button>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="relative w-10 h-10 text-white/40 hover:text-white/70 hover:bg-white/[0.04] rounded-xl"
+            >
+              <Bell className="w-[18px] h-[18px]" />
+              <span className="absolute top-2.5 right-2.5 w-1.5 h-1.5 rounded-full bg-amber-500" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-80 bg-[#0f0f0f] border-white/[0.06] rounded-xl p-2">
+            <div className="px-3 py-2 mb-1">
+              <span className="text-[13px] font-semibold text-white">Notifications</span>
+            </div>
+            <DropdownMenuSeparator className="bg-white/[0.06] my-1" />
+            <DropdownMenuItem className="flex items-start gap-3 text-white/60 hover:text-white focus:text-white focus:bg-white/[0.06] rounded-lg px-3 py-3 cursor-pointer">
+              <span className="mt-0.5 w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0" />
+              <div>
+                <div className="text-[12px] font-medium text-white">Detection Complete</div>
+                <div className="text-[11px] text-white/40 mt-0.5">Zone NR-7: 12 assets identified with 94% confidence</div>
+                <div className="text-[10px] text-white/25 mt-1">2 min ago</div>
+              </div>
+            </DropdownMenuItem>
+            <DropdownMenuItem className="flex items-start gap-3 text-white/60 hover:text-white focus:text-white focus:bg-white/[0.06] rounded-lg px-3 py-3 cursor-pointer">
+              <span className="mt-0.5 w-2 h-2 rounded-full bg-amber-500 flex-shrink-0" />
+              <div>
+                <div className="text-[12px] font-medium text-white">Encroachment Alert</div>
+                <div className="text-[11px] text-white/40 mt-0.5">Unauthorized structure detected near Track Segment CR-4</div>
+                <div className="text-[10px] text-white/25 mt-1">18 min ago</div>
+              </div>
+            </DropdownMenuItem>
+            <DropdownMenuItem className="flex items-start gap-3 text-white/60 hover:text-white focus:text-white focus:bg-white/[0.06] rounded-lg px-3 py-3 cursor-pointer">
+              <span className="mt-0.5 w-2 h-2 rounded-full bg-white/20 flex-shrink-0" />
+              <div>
+                <div className="text-[12px] font-medium text-white">DIGIT Sync Successful</div>
+                <div className="text-[11px] text-white/40 mt-0.5">8 asset records pushed to the central registry</div>
+                <div className="text-[10px] text-white/25 mt-1">1 hour ago</div>
+              </div>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
 
         {/* User Menu */}
         <DropdownMenu>
