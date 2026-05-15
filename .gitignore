@@ -47,3 +47,5 @@ build/
 # Misc
 *.log
 npm-debug.log*
+backend/yolov8x.pt
+*.pt
