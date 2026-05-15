@@ -1,0 +1,58 @@
+{
+  "id": "rpt-railway-land-20260510",
+  "title": "Railway Land Encroachment Assessment — NDLS Zone",
+  "type": "encroachment",
+  "classification": "CONFIDENTIAL — For Official Use Only",
+  "generatedAt": "2026-05-10T12:00:00Z",
+  "generatedBy": "GeoVision AI v2.4 — Spatial Intelligence Engine",
+  "jurisdiction": "Northern Railway — Delhi Division",
+  "reportPeriod": {
+    "from": "2023-01-15T00:00:00Z",
+    "to": "2026-05-10T00:00:00Z"
+  },
+  "executiveSummary": "Over the 40-month monitoring period, five encroachment zones have been identified on designated railway land within the NDLS Central District. Total encroached area: 30,500 sq.m across 2 confirmed and 3 suspected zones. Estimated annual revenue impact: ₹4.2 Cr. Railway Act 1989 compliance stands at 72% against a target of 95%. Immediate enforcement action is recommended for Zone S-7 (22,000 sq.m — commercial encroachment) and Parcel A-17 (8,500 sq.m — unauthorized construction).",
+  "zones": [
+    {
+      "zone": "Encroachment Zone S-7",
+      "status": "Confirmed",
+      "areaSqM": 22000,
+      "type": "Commercial — Unauthorized structures",
+      "distanceFromTrackM": 45,
+      "riskScore": 91,
+      "detectedDate": "2026-03-10",
+      "recommendation": "Initiate enforcement proceedings under Railway Act Section 147"
+    },
+    {
+      "zone": "Railway Parcel A-17",
+      "status": "Confirmed",
+      "areaSqM": 8500,
+      "type": "Residential — Unauthorized construction",
+      "distanceFromTrackM": 28,
+      "riskScore": 82,
+      "detectedDate": "2026-02-20",
+      "recommendation": "Field verification and boundary demarcation within 7 days"
+    },
+    {
+      "zone": "Sector R-4",
+      "status": "Suspected",
+      "areaSqM": 4200,
+      "type": "Residential expansion toward rail boundary",
+      "distanceFromTrackM": 85,
+      "riskScore": 48,
+      "detectedDate": "2026-04-15",
+      "recommendation": "Monitor in next scan cycle"
+    }
+  ],
+  "complianceMetrics": {
+    "railwayAct1989": 72,
+    "environmentalClearance": 68,
+    "digitReporting": 95,
+    "fieldVerification": 81,
+    "boundaryDemarcation": 64
+  },
+  "revenueImpact": {
+    "annualLandValueAtRisk": 42000000,
+    "potentialRecovery": 28000000,
+    "enforcementCost": 3500000
+  }
+}

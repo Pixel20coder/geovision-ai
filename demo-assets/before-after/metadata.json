@@ -1,0 +1,28 @@
+{
+  "id": "change-01",
+  "category": "before-after",
+  "title": "Urban Change Detection — Jan 2023 vs May 2026",
+  "description": "Temporal comparison of railway corridor development. Baseline scan shows sparse development with intact green buffer zones. Current scan reveals accelerated urbanization, reduced vegetation, and encroachment near railway boundaries.",
+  "scans": [
+    {
+      "id": "scan-baseline",
+      "label": "Baseline Scan",
+      "captureDate": "2023-01-15T06:30:00Z",
+      "file": "scan-jan-2023-baseline.png"
+    },
+    {
+      "id": "scan-current",
+      "label": "Current Scan",
+      "captureDate": "2026-05-10T06:45:00Z",
+      "file": "scan-may-2026-current.png"
+    }
+  ],
+  "sensor": "WorldView-3",
+  "resolution": "0.31m GSD",
+  "coordinates": {
+    "center": [28.6315, 77.2167],
+    "bbox": [28.622, 77.207, 28.641, 77.227]
+  },
+  "zone": "NDLS-CD-FULL",
+  "corridor": "Delhi-Howrah Main Line"
+}

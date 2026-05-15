@@ -1,0 +1,21 @@
+{
+  "id": "vegetation-01",
+  "category": "vegetation",
+  "title": "Railway Green Belt Corridor — Eastern Sector",
+  "description": "Green cover monitoring along eastern railway corridor. Dense tree canopy with parks, gardens, and biodiversity zones flanking the main track line.",
+  "captureDate": "2026-05-10T06:45:00Z",
+  "sensor": "WorldView-3",
+  "resolution": "0.31m GSD",
+  "bandType": "RGB + NIR (False Color Composite)",
+  "cloudCover": 1.8,
+  "coordinates": {
+    "center": [28.6345, 77.2197],
+    "bbox": [28.628, 77.213, 28.641, 77.226]
+  },
+  "zone": "NDLS-GC-02",
+  "corridor": "Eastern Railway Corridor",
+  "files": {
+    "satellite": "railway-green-corridor.png",
+    "thumbnail": "railway-green-corridor.png"
+  }
+}

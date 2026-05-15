@@ -1,0 +1,77 @@
+{
+  "report_id": "GV-RPT-2026-URB-001",
+  "type": "urban-infrastructure",
+  "classification": "RESTRICTED — For Official Use Only",
+  "generated_at": "2026-05-10T12:00:00Z",
+  "model_version": "GeoVision AI v2.4 — YOLOv8x Geospatial",
+  "scan_id": "SCAN-NDLS-20260510-0645",
+  "region_id": "NR-DLI-CD-01",
+  "zone": "New Delhi Railway Zone — Central District",
+  "scan_period": "Jan 2026 — May 2026",
+  "sensor": "WorldView-3 (0.31m GSD)",
+  "coordinates": { "center": [28.6315, 77.2167], "bbox": [28.625, 77.210, 28.638, 77.224] },
+  "risk_level": "HIGH",
+  "overall_risk_score": 78,
+  "confidence": 94.2,
+  "severity": "elevated",
+  "executive_summary": "The NDLS Central District monitored area (2.45 km²) has experienced accelerated urban densification over the past 5 months. Building density has reached 847 structures/km² with a growth rate of 18.6% since the January baseline. Five encroachment zones totaling 30,500 sq.m have been identified on designated railway land, with two confirmed violations exceeding the 30m railway boundary safety threshold. Infrastructure load on the station approach network exceeds design capacity by 22% during peak hours. Immediate enforcement action is required for Encroachment Zone S-7 (22,000 sq.m — commercial) and Parcel A-17 (8,500 sq.m — residential).",
+  "ai_findings": [
+    "847 structures detected across the monitored zone, up from 832 in January (+15 new constructions)",
+    "Three new construction clusters identified within 120m of active railway boundary",
+    "Encroachment Zone S-7 has expanded by 3,200 sq.m since last scan — now covers 22,000 sq.m of railway land",
+    "Unauthorized Structure A-17 detected on Railway Parcel A-17 — 8,500 sq.m, 28m from active track (threshold: 30m)",
+    "Signal Control Tower sight-line partially obstructed by new 3-story commercial building at grid ref 28.633°N, 77.219°E",
+    "Staff Quarters Block B shows 12% structural footprint expansion without authorization"
+  ],
+  "risk_indicators": {
+    "encroachment_risk": { "score": 91, "level": "critical", "description": "Active boundary violations at 2 locations" },
+    "infrastructure_load": { "score": 74, "level": "high", "description": "Approach road capacity exceeded 22% during peak" },
+    "structural_safety": { "score": 62, "level": "medium", "description": "Signal tower sight-line obstruction detected" },
+    "compliance_gap": { "score": 78, "level": "high", "description": "Railway Act 1989 compliance at 72% (target: 95%)" }
+  },
+  "detected_assets": {
+    "buildings": { "count": 847, "verified": 724, "flagged": 18, "under_review": 105 },
+    "roads": { "count": 156, "total_km": 45.6 },
+    "green_cover": { "count": 234, "area_hectares": 234 },
+    "water_bodies": { "count": 12, "area_sqm": 40000 },
+    "drains": { "count": 38 },
+    "railway_structures": { "count": 64 },
+    "encroachments": { "count": 5, "total_area_sqm": 30500 }
+  },
+  "coverage_percent": {
+    "buildings": 34.5, "roads": 18.2, "green_cover": 28.7, "water": 8.4, "drains": 3.8, "railway": 6.4
+  },
+  "environmental_index": 72.3,
+  "urban_density_pct": 67.8,
+  "recommendations": [
+    { "priority": "P1", "timeline": "Immediate", "action": "Initiate enforcement proceedings for Encroachment Zone S-7 under Railway Act Section 147. Estimated encroached railway land value: ₹2.8 Cr.", "category": "encroachment" },
+    { "priority": "P1", "timeline": "7 days", "action": "Deploy field verification team to Railway Parcel A-17. Confirm boundary violation (28m from track vs. 30m threshold). Issue notice under Section 147A.", "category": "encroachment" },
+    { "priority": "P2", "timeline": "14 days", "action": "Assess Signal Control Tower sight-line obstruction. If confirmed, issue demolition notice for unauthorized 3-story structure at 28.633°N, 77.219°E.", "category": "infrastructure" },
+    { "priority": "P2", "timeline": "30 days", "action": "Commission traffic flow study for Station Access Road. Current peak load (520 vehicles/hour) exceeds design capacity (425 vehicles/hour).", "category": "infrastructure" },
+    { "priority": "P3", "timeline": "60 days", "action": "Install permanent boundary markers and CCTV surveillance at 5 encroachment-prone locations along eastern corridor.", "category": "monitoring" },
+    { "priority": "P3", "timeline": "90 days", "action": "Submit quarterly compliance report to Railway Board. Current Railway Act 1989 compliance: 72% (target: 95%).", "category": "compliance" }
+  ],
+  "environmental_insights": {
+    "green_cover_change": "-9.4% since January baseline",
+    "heat_island_effect": "+2.1°C in high-density zones",
+    "air_quality_index": "Moderate (AQI 142)",
+    "noise_level": "72 dB (exceeds residential threshold of 55 dB)"
+  },
+  "infrastructure_warnings": [
+    "Level Crossing LC-42 approach partially obstructed by vendor stalls — pedestrian safety risk HIGH",
+    "Perimeter Service Road surface degradation at km 2.4–3.1 — pothole density exceeds maintenance threshold",
+    "Drainage capacity in Zone D-1 reduced by 35% — monsoon flood risk ELEVATED"
+  ],
+  "compliance_metrics": {
+    "railway_act_1989": 72,
+    "environmental_clearance": 68,
+    "digit_reporting": 95,
+    "field_verification": 81,
+    "boundary_demarcation": 64
+  },
+  "revenue_impact": {
+    "land_value_at_risk_inr": 42000000,
+    "potential_recovery_inr": 28000000,
+    "enforcement_cost_inr": 3500000
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "report_id": "GV-RPT-2026-CHG-005",
+  "type": "urban-change-detection",
+  "classification": "RESTRICTED — For Official Use Only",
+  "generated_at": "2026-05-10T13:00:00Z",
+  "scan_id": "SCAN-NDLS-20260510-TEMPORAL",
+  "region_id": "NR-DLI-FULL",
+  "zone": "NDLS Full Corridor — Multi-Zone Analysis",
+  "scan_period": "Jan 2023 → May 2026 (40-month temporal analysis)",
+  "risk_level": "HIGH",
+  "overall_risk_score": 85,
+  "confidence": 93.6,
+  "severity": "severe",
+  "executive_summary": "40-month temporal analysis reveals accelerated urban transformation. Built-up area increased 24% (+227 structures). Green cover declined 31.2% (340→234 hectares). Three confirmed encroachment zones occupy 30,500 sq.m of railway land. Drainage capacity reduced 35% in Zone D-1. Urban heat island effect +2.8°C. Revenue impact: ₹4.2 Cr annual land value at risk. Immediate enforcement required for Zone S-7 and Parcel A-17.",
+  "ai_findings": [
+    "Built-up expansion: +227 structures (620→847), 24% growth over 40 months",
+    "Green cover: -106 hectares (340→234), 31.2% decline — exceeds critical threshold",
+    "Encroachment: 30,500 sq.m across 5 zones on designated railway land",
+    "Water bodies: stable count but 2.1% area reduction from sedimentation",
+    "Road network: +46 km expanded (110→156 segments), 42% growth",
+    "Drainage: 35% capacity loss in Zone D-1, 2 lines blocked"
+  ],
+  "change_metrics": {
+    "buildings": { "baseline": 620, "current": 847, "change": "+227", "change_pct": "+36.6%" },
+    "green_cover_ha": { "baseline": 340, "current": 234, "change": "-106", "change_pct": "-31.2%" },
+    "roads_km": { "baseline": 22.4, "current": 45.6, "change": "+23.2", "change_pct": "+103.6%" },
+    "water_bodies": { "baseline": 16, "current": 12, "change": "-4", "change_pct": "-25.0%" },
+    "encroachment_sqm": { "baseline": 0, "current": 30500, "change": "+30500", "change_pct": "NEW" },
+    "urban_density_pct": { "baseline": 45.2, "current": 67.8, "change": "+22.6", "change_pct": "+50.0%" }
+  },
+  "recommendations": [
+    { "priority": "P1", "timeline": "Immediate", "action": "Enforce eviction at Zone S-7 (22,000 sq.m commercial encroachment on railway land).", "category": "encroachment" },
+    { "priority": "P1", "timeline": "7 days", "action": "Field verify Parcel A-17 boundary violation (28m from track vs 30m threshold).", "category": "encroachment" },
+    { "priority": "P1", "timeline": "14 days", "action": "Clear Drainage D-1 before monsoon. Install temporary pumps at underpass Section 4.", "category": "flood-mitigation" },
+    { "priority": "P2", "timeline": "30 days", "action": "Initiate compensatory afforestation for 150 hectares per Green Tribunal mandate.", "category": "restoration" },
+    { "priority": "P2", "timeline": "60 days", "action": "Install permanent boundary markers at all 5 encroachment-prone zones.", "category": "monitoring" },
+    { "priority": "P3", "timeline": "90 days", "action": "Submit comprehensive compliance report to Railway Board.", "category": "compliance" }
+  ],
+  "infrastructure_warnings": [
+    "3 encroachment zones within 120m of active railway track — safety risk",
+    "Drainage capacity 35% below design — monsoon flooding risk at underpass Section 4",
+    "Signal tower sight-line partially obstructed by unauthorized construction"
+  ]
+}

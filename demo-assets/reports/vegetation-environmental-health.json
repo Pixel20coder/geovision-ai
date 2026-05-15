@@ -1,0 +1,72 @@
+{
+  "report_id": "GV-RPT-2026-ENV-002",
+  "type": "vegetation-environmental",
+  "classification": "RESTRICTED — For Official Use Only",
+  "generated_at": "2026-05-10T12:15:00Z",
+  "model_version": "GeoVision AI v2.4 — NDVI Analyzer",
+  "scan_id": "SCAN-NDLS-20260510-0645",
+  "region_id": "NR-DLI-GC-02",
+  "zone": "Eastern Railway Corridor — Green Belt Zone",
+  "scan_period": "2020 Baseline — May 2026",
+  "sensor": "WorldView-3 (0.31m GSD, NIR Band)",
+  "coordinates": { "center": [28.6345, 77.2197], "bbox": [28.628, 77.213, 28.641, 77.226] },
+  "risk_level": "MEDIUM",
+  "overall_risk_score": 62,
+  "confidence": 92.8,
+  "severity": "severe",
+  "executive_summary": "Vegetation analysis along the eastern railway corridor reveals a 31.2% decline in green cover since the 2020 baseline (340 → 234 hectares). The decline is driven by urban encroachment (42 ha), deforestation for construction (38 ha), and road expansion (26 ha). NDVI average has dropped from 0.68 to 0.42, indicating significant vegetation stress. Urban heat island effect has increased +2.8°C in adjacent high-density zones. Biodiversity index has fallen from 6.8 to 4.2. Compensatory afforestation of 150 hectares is mandated under Green Tribunal Order GT/2024/ENV-342 — current progress: 12 hectares planted (8% of mandate).",
+  "ai_findings": [
+    "Total green cover reduced from 340 hectares (2020) to 234 hectares (2026) — net loss of 106 hectares (31.2%)",
+    "Corridor buffer strips show most severe degradation: NDVI dropped from 0.72 to 0.28 (52.3% reduction)",
+    "Northern Forest Reserve has lost 38.7% of tree canopy — primary cause: unauthorized commercial deforestation",
+    "Biodiversity index declined from 6.8 to 4.2 — 3 indicator species no longer detected in quarterly surveys",
+    "Urban heat island temperature differential increased from 1.2°C (2020) to 2.8°C (2026)",
+    "Storm water runoff increased 22% due to vegetation loss and increased impermeable surface area"
+  ],
+  "risk_indicators": {
+    "vegetation_loss": { "score": 82, "level": "high", "description": "31.2% decline exceeds 20% critical threshold" },
+    "heat_island": { "score": 68, "level": "medium", "description": "+2.8°C exceeds 2°C intervention threshold" },
+    "biodiversity": { "score": 74, "level": "high", "description": "Index 4.2 below 5.0 minimum requirement" },
+    "tribunal_compliance": { "score": 45, "level": "medium", "description": "Only 8% of mandated afforestation completed" }
+  },
+  "detected_assets": {
+    "tree_canopy_zones": { "count": 234, "area_hectares": 234, "health_good": 63, "health_moderate": 86, "health_degraded": 52, "health_critical": 33 },
+    "parks_gardens": { "count": 8, "area_hectares": 18.4 },
+    "buffer_strips": { "count": 12, "total_km": 14.2 },
+    "plantation_areas": { "count": 4, "area_hectares": 12, "survival_rate": 0.72 }
+  },
+  "coverage_percent": {
+    "healthy_vegetation": 18.2, "moderate_vegetation": 14.8, "stressed_vegetation": 9.7, "bare_soil": 8.4, "built_up": 42.6, "water": 4.8, "other": 1.5
+  },
+  "environmental_index": 48.6,
+  "ndvi_analysis": {
+    "current_average": 0.42,
+    "baseline_average": 0.68,
+    "change": -0.26,
+    "zones": [
+      { "name": "Railway Green Belt", "ndvi": 0.45, "health": "moderate" },
+      { "name": "Station Garden District", "ndvi": 0.62, "health": "good" },
+      { "name": "Northern Forest Reserve", "ndvi": 0.38, "health": "degraded" },
+      { "name": "Biodiversity Park", "ndvi": 0.58, "health": "good" },
+      { "name": "Corridor Buffer Strips", "ndvi": 0.28, "health": "critical" }
+    ]
+  },
+  "recommendations": [
+    { "priority": "P1", "timeline": "Immediate", "action": "Halt all unauthorized tree-felling within the eastern corridor buffer zone. Issue cease-and-desist notices to 3 identified commercial clearing operations.", "category": "enforcement" },
+    { "priority": "P1", "timeline": "30 days", "action": "Accelerate compensatory afforestation program. Current: 12 ha planted. Mandate: 150 ha. Engage contracted nurseries for 50,000 native saplings.", "category": "restoration" },
+    { "priority": "P2", "timeline": "60 days", "action": "Install automated NDVI monitoring stations at 5 critical buffer strip locations for real-time vegetation health alerts.", "category": "monitoring" },
+    { "priority": "P2", "timeline": "90 days", "action": "Submit Green Tribunal compliance report. Include satellite-verified planting evidence and NDVI trend data.", "category": "compliance" },
+    { "priority": "P3", "timeline": "6 months", "action": "Commission urban heat island mitigation study. Evaluate green roof mandates for new construction within 500m of railway corridor.", "category": "planning" }
+  ],
+  "environmental_insights": {
+    "carbon_sequestration_loss": "Estimated 2,400 tonnes CO₂/year reduction in sequestration capacity",
+    "water_table_impact": "Groundwater recharge reduced by 18% in deforested zones",
+    "soil_erosion": "Topsoil loss rate increased 34% in buffer strip areas",
+    "wildlife_corridor": "2 of 4 mapped wildlife corridors now fragmented by construction"
+  },
+  "infrastructure_warnings": [
+    "Root system damage from deforestation may affect track bed stability within 50m of Northern Forest Reserve boundary",
+    "Increased runoff from deforested areas contributing to drainage blockage in Zone D-1",
+    "Dust and particulate levels elevated along deforested corridor stretches — crew health advisory issued"
+  ]
+}

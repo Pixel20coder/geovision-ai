@@ -1,0 +1,21 @@
+{
+  "id": "urban-dense-01",
+  "category": "urban-dense",
+  "title": "New Delhi Central District — High Density Zone",
+  "description": "Dense urban fabric surrounding New Delhi Railway Station. Mixed residential-commercial structures with narrow approach roads and minimal green buffer.",
+  "captureDate": "2026-05-10T06:45:00Z",
+  "sensor": "WorldView-3",
+  "resolution": "0.31m GSD",
+  "bandType": "RGB Natural Color",
+  "cloudCover": 2.1,
+  "coordinates": {
+    "center": [28.6315, 77.2167],
+    "bbox": [28.625, 77.210, 28.638, 77.224]
+  },
+  "zone": "NDLS-CD-01",
+  "corridor": "Delhi-Howrah Main Line",
+  "files": {
+    "satellite": "ndls-central-district.png",
+    "thumbnail": "ndls-central-district.png"
+  }
+}

@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+.next/
+out/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+*.egg-info/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Uploads & outputs (runtime)
+backend/uploads/*
+backend/predictions/*
+backend/app/uploads/*
+backend/app/outputs/*
+!backend/uploads/.gitkeep
+!backend/predictions/.gitkeep
+
+# YOLO model (too large for git)
+backend/models/*.pt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# V0 clone (reference only)
+_v0-frontend/
+
+# Old frontend backup
+_old-frontend/
+
+# Build
+dist/
+build/
+
+# Misc
+*.log
+npm-debug.log*

@@ -1,0 +1,21 @@
+{
+  "id": "roads-01",
+  "category": "roads",
+  "title": "Station Approach Road Network — Infrastructure Analysis",
+  "description": "Road network analysis covering railway approach roads, service lanes, level crossings, and station access infrastructure. Includes traffic load assessment zones.",
+  "captureDate": "2026-05-10T06:45:00Z",
+  "sensor": "WorldView-3",
+  "resolution": "0.31m GSD",
+  "bandType": "RGB Natural Color",
+  "cloudCover": 1.5,
+  "coordinates": {
+    "center": [28.6315, 77.2167],
+    "bbox": [28.626, 77.211, 28.637, 77.222]
+  },
+  "zone": "NDLS-RD-01",
+  "corridor": "Station Approach Network",
+  "files": {
+    "satellite": "station-approach-network.png",
+    "thumbnail": "station-approach-network.png"
+  }
+}

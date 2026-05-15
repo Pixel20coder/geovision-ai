@@ -1,0 +1,21 @@
+{
+  "id": "water-01",
+  "category": "water",
+  "title": "Yamuna Reservoir Zone — Water Body Intelligence",
+  "description": "Water body monitoring near Yamuna tributary canal and Reservoir Alpha. Tracks seasonal water level changes, embankment integrity, and downstream drainage health.",
+  "captureDate": "2026-05-10T06:45:00Z",
+  "sensor": "WorldView-3",
+  "resolution": "0.31m GSD",
+  "bandType": "RGB + SWIR",
+  "cloudCover": 3.2,
+  "coordinates": {
+    "center": [28.6295, 77.2237],
+    "bbox": [28.623, 77.217, 28.636, 77.230]
+  },
+  "zone": "NDLS-WB-01",
+  "corridor": "Yamuna Floodplain Corridor",
+  "files": {
+    "satellite": "yamuna-reservoir-zone.png",
+    "thumbnail": "yamuna-reservoir-zone.png"
+  }
+}

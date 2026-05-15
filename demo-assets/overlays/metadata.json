@@ -1,0 +1,20 @@
+{
+  "id": "overlays-01",
+  "category": "overlays",
+  "title": "AI Detection and Risk Overlays",
+  "description": "Pre-generated AI analysis overlays for demo mode. Includes asset detection polygons (buildings, roads, vegetation, water) and thermal-style risk heatmap.",
+  "generatedAt": "2026-05-10T08:30:00Z",
+  "modelVersion": "YOLOv8x-geospatial-v2.4",
+  "files": {
+    "detectionOverlay": "detection-overlay-full.png",
+    "riskHeatmap": "risk-heatmap-overlay.png"
+  },
+  "detectionClasses": [
+    { "class": "building", "color": "#00d4ff", "count": 847 },
+    { "class": "road", "color": "#f97316", "count": 156 },
+    { "class": "green_cover", "color": "#10b981", "count": 234 },
+    { "class": "water_body", "color": "#3b82f6", "count": 12 },
+    { "class": "railway", "color": "#ff6b35", "count": 64 },
+    { "class": "encroachment", "color": "#f43f5e", "count": 5 }
+  ]
+}

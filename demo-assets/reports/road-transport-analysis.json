@@ -1,0 +1,33 @@
+{
+  "report_id": "GV-RPT-2026-RDT-004",
+  "type": "road-transport-analysis",
+  "classification": "RESTRICTED — For Official Use Only",
+  "generated_at": "2026-05-10T12:45:00Z",
+  "scan_id": "SCAN-NDLS-20260510-0645",
+  "region_id": "NR-DLI-RD-01",
+  "zone": "Station Approach Network — NDLS",
+  "scan_period": "Jan 2026 — May 2026",
+  "risk_level": "MEDIUM",
+  "overall_risk_score": 52,
+  "confidence": 90.6,
+  "severity": "moderate",
+  "executive_summary": "Road network assessment covers 45.6 km across 156 segments. Condition: 68% good, 22% fair, 10% poor. Station Access Road peak traffic exceeds design capacity by 22%. Level Crossing LC-42 has vendor stall obstruction creating HIGH pedestrian safety risk. Railway Approach Road km 2.4-3.1 requires urgent resurfacing.",
+  "ai_findings": [
+    "156 road segments analyzed — 68% good, 22% fair, 10% poor condition",
+    "Station Access Road peak traffic: 520 vehicles/hour (capacity: 425) — 22% overload",
+    "Level Crossing LC-42 sight distance reduced 40% by vendor stalls",
+    "Railway Approach Road has 14 potholes exceeding 15cm depth",
+    "Perimeter Service Road encroached at 2 points (1,800 sq.m)"
+  ],
+  "recommendations": [
+    { "priority": "P1", "timeline": "7 days", "action": "Remove vendor stalls from LC-42. Restore 150m sight distance.", "category": "safety" },
+    { "priority": "P2", "timeline": "21 days", "action": "Resurface Approach Road km 2.4-3.1. Cost: ₹18 Lakh.", "category": "maintenance" },
+    { "priority": "P2", "timeline": "30 days", "action": "Commission traffic optimization study for Station Access Road.", "category": "traffic" },
+    { "priority": "P3", "timeline": "60 days", "action": "Clear service road encroachments (1,800 sq.m).", "category": "encroachment" }
+  ],
+  "infrastructure_warnings": [
+    "Overpass at km 8.4 showing surface cracking — structural inspection needed",
+    "Street lighting non-functional at 6 of 24 intersections",
+    "Drainage grating missing at 3 locations on Station Access Road"
+  ]
+}

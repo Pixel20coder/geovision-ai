@@ -1,0 +1,62 @@
+{
+  "report_id": "GV-RPT-2026-WTR-003",
+  "type": "water-body-monitoring",
+  "classification": "RESTRICTED — For Official Use Only",
+  "generated_at": "2026-05-10T12:30:00Z",
+  "model_version": "GeoVision AI v2.4 — Hydrological Analyzer",
+  "scan_id": "SCAN-NDLS-20260510-0645",
+  "region_id": "NR-DLI-WB-01",
+  "zone": "Yamuna Reservoir Zone — Floodplain Corridor",
+  "scan_period": "Jan 2026 — May 2026 (Pre-Monsoon Assessment)",
+  "sensor": "WorldView-3 (0.31m GSD, SWIR Band)",
+  "coordinates": { "center": [28.6295, 77.2237], "bbox": [28.623, 77.217, 28.636, 77.230] },
+  "risk_level": "MEDIUM",
+  "overall_risk_score": 68,
+  "confidence": 91.4,
+  "severity": "elevated",
+  "executive_summary": "Pre-monsoon hydrological assessment of the Yamuna Reservoir Zone reveals elevated flood risk due to compromised drainage infrastructure. Reservoir Alpha is at 78.2% capacity (seasonal low, expected). However, 2 of 5 drainage lines are partially blocked, reducing total drainage capacity by 35%. Storm Drain SD-7 is at critical capacity (48%). Urban construction has increased impermeable surface area by 12%, accelerating runoff velocity. Monsoon onset is estimated at 45 days. Immediate clearing of Primary Drainage D-1 and Storm Drain SD-7 is required to prevent track-level flooding at underpass Section 4.",
+  "ai_findings": [
+    "Reservoir Alpha at 78.2% capacity — within normal seasonal range for pre-monsoon period",
+    "Yamuna Tributary Canal shows 12% sediment accumulation along southern bank — dredging recommended",
+    "Primary Drainage D-1 capacity reduced to 65% — sediment and construction debris blockage detected at 3 points",
+    "Storm Drain SD-7 at critical 48% capacity — complete blockage risk if not cleared before monsoon",
+    "Seasonal Pond N-3 formation detected (1,200 sq.m) — groundwater seepage may affect track stability in Section 7",
+    "Impermeable surface area increased 12% since 2023 baseline — runoff coefficient now exceeds design parameters"
+  ],
+  "risk_indicators": {
+    "flood_risk": { "score": 78, "level": "high", "description": "35% drainage capacity reduction with monsoon 45 days away" },
+    "drainage_health": { "score": 62, "level": "medium", "description": "2 of 5 lines blocked, 1 degraded" },
+    "track_flooding": { "score": 72, "level": "high", "description": "Underpass Section 4 inadequate drainage confirmed" },
+    "embankment_integrity": { "score": 48, "level": "medium", "description": "Southern canal bank shows 8% erosion since January" }
+  },
+  "detected_assets": {
+    "reservoirs": { "count": 1, "capacity_percent": 78.2, "status": "normal" },
+    "canals": { "count": 1, "length_km": 2.8, "sedimentation_percent": 12 },
+    "drainage_lines": { "count": 5, "operational": 2, "degraded": 1, "blocked": 2 },
+    "ponds": { "count": 1, "seasonal": true, "area_sqm": 1200 },
+    "culverts": { "count": 8, "functional": 6, "needs_repair": 2 }
+  },
+  "coverage_percent": {
+    "open_water": 18.4, "wetland": 4.2, "floodplain": 6.0, "drainage_corridor": 8.2, "built_up": 42.8, "vegetation": 16.2, "bare_soil": 4.2
+  },
+  "environmental_index": 64.8,
+  "recommendations": [
+    { "priority": "P1", "timeline": "7 days", "action": "Clear Primary Drainage D-1 at 3 identified blockage points. Deploy mechanical excavation for sediment and construction debris removal.", "category": "flood-mitigation" },
+    { "priority": "P1", "timeline": "14 days", "action": "Emergency clearing of Storm Drain SD-7 (48% capacity). Install temporary pumping station at underpass Section 4.", "category": "flood-mitigation" },
+    { "priority": "P2", "timeline": "21 days", "action": "Dredge Yamuna Tributary Canal southern bank (12% sedimentation). Restore flow capacity before monsoon onset.", "category": "infrastructure" },
+    { "priority": "P2", "timeline": "30 days", "action": "Repair 2 non-functional culverts at grid refs 28.628°N/77.220°E and 28.631°N/77.225°E.", "category": "infrastructure" },
+    { "priority": "P3", "timeline": "45 days", "action": "Install water-level sensors at Reservoir Alpha, Drainage D-1 exit, and underpass Section 4 for real-time monsoon monitoring.", "category": "monitoring" },
+    { "priority": "P3", "timeline": "60 days", "action": "Commission runoff impact study for new impermeable surfaces. Evaluate mandatory rainwater harvesting for construction within 200m of drainage corridor.", "category": "planning" }
+  ],
+  "environmental_insights": {
+    "water_quality": "Yamuna Tributary Canal — moderate turbidity, dissolved oxygen 4.2 mg/L (below 5.0 threshold)",
+    "groundwater": "Seasonal pond N-3 indicates rising water table in Section 7 — track stability monitoring required",
+    "erosion": "Southern canal bank erosion rate: 0.8m/year — embankment reinforcement needed within 18 months",
+    "monsoon_readiness": "Overall readiness: 42% — 3 critical drainage issues must be resolved before June 25 estimated onset"
+  },
+  "infrastructure_warnings": [
+    "Track underpass Section 4 flooded 3 times during 2025 monsoon — same drainage issues persist",
+    "Culvert C-3 at km 4.2 showing structural cracking — load rating reduced to 60% pending repair",
+    "Canal embankment settlement detected near Reservoir Alpha outflow — 15cm subsidence over 6 months"
+  ]
+}

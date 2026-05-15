@@ -1,0 +1,54 @@
+{
+  "report_id": "GV-RPT-2026-DRN-006",
+  "type": "drainage-flood-risk",
+  "classification": "RESTRICTED — URGENT PRE-MONSOON",
+  "generated_at": "2026-05-10T13:15:00Z",
+  "scan_id": "SCAN-NDLS-20260510-HYDRO",
+  "region_id": "NR-DLI-DR-01",
+  "zone": "NDLS Drainage Network — Pre-Monsoon Assessment",
+  "scan_period": "Pre-Monsoon 2026 (Assessment Window: May 10–Jun 25)",
+  "risk_level": "HIGH",
+  "overall_risk_score": 76,
+  "confidence": 89.2,
+  "severity": "elevated",
+  "executive_summary": "Pre-monsoon drainage assessment reveals critical vulnerabilities in the NDLS zone drainage network. Of 5 primary drainage lines, 2 are blocked and 1 is degraded — total network capacity reduced to 65%. Storm Drain SD-7 is at 48% capacity (critical). Track underpass Section 4 flooded 3 times during 2025 monsoon with identical drainage issues persisting. Urban impermeable surface growth (+12% since 2023) has increased peak runoff velocity by 28%. Monsoon onset estimated: June 25 (45 days). Without intervention, 3 track sections face HIGH flooding probability.",
+  "ai_findings": [
+    "5 primary drainage lines assessed: 2 operational, 1 degraded, 2 blocked",
+    "Total drainage network capacity: 65% (critical threshold: 75%)",
+    "Storm Drain SD-7 at 48% capacity — single blockage point at junction J-14",
+    "Primary Drainage D-1 blocked at 3 points: km 0.8, km 1.4, km 2.1",
+    "Impermeable surface area increased 12% since 2023 — runoff coefficient 0.72 (design: 0.58)",
+    "Historical flood data: underpass Section 4 flooded 3 times in 2025 monsoon (avg depth: 0.4m)"
+  ],
+  "risk_indicators": {
+    "network_capacity": { "score": 82, "level": "high", "description": "65% capacity vs 75% minimum threshold" },
+    "track_flooding": { "score": 78, "level": "high", "description": "Section 4 underpass repeat flood risk" },
+    "urban_runoff": { "score": 72, "level": "high", "description": "Runoff coefficient 24% above design" },
+    "maintenance_backlog": { "score": 68, "level": "medium", "description": "2 blocked lines overdue for clearing" }
+  },
+  "drainage_network": [
+    { "id": "D-1", "name": "Primary Drainage D-1", "capacity_pct": 65, "status": "blocked", "blockage_points": 3, "risk": "high" },
+    { "id": "S-3", "name": "Sewage Channel S-3", "capacity_pct": 82, "status": "operational", "blockage_points": 0, "risk": "low" },
+    { "id": "SD-7", "name": "Storm Drain SD-7", "capacity_pct": 48, "status": "blocked", "blockage_points": 1, "risk": "critical" },
+    { "id": "C-2", "name": "Culvert Line C-2", "capacity_pct": 91, "status": "operational", "blockage_points": 0, "risk": "low" },
+    { "id": "O-1", "name": "Overflow Channel O-1", "capacity_pct": 74, "status": "degraded", "blockage_points": 0, "risk": "medium" }
+  ],
+  "flood_risk_zones": [
+    { "zone": "Underpass Section 4", "probability": "HIGH (85%)", "impact": "Track submersion 0.3-0.5m", "mitigation": "Temporary pumps + SD-7 clearing" },
+    { "zone": "Low-lying area near Reservoir Alpha", "probability": "MEDIUM (55%)", "impact": "Access road flooding", "mitigation": "Embankment reinforcement" },
+    { "zone": "Eastern Corridor depression", "probability": "MEDIUM (48%)", "impact": "Residential area waterlogging", "mitigation": "D-1 clearing + runoff diversion" }
+  ],
+  "recommendations": [
+    { "priority": "P1", "timeline": "7 days", "action": "Emergency clearing of Storm Drain SD-7 at junction J-14. Deploy mechanical excavation team.", "category": "flood-mitigation" },
+    { "priority": "P1", "timeline": "14 days", "action": "Clear Primary Drainage D-1 at 3 blockage points (km 0.8, 1.4, 2.1). Estimated debris: 45 tonnes.", "category": "flood-mitigation" },
+    { "priority": "P1", "timeline": "14 days", "action": "Install temporary diesel pumps (3×500 L/min) at underpass Section 4.", "category": "flood-mitigation" },
+    { "priority": "P2", "timeline": "30 days", "action": "Rehabilitate Overflow Channel O-1 — repair concrete lining at km 0.6-1.2.", "category": "maintenance" },
+    { "priority": "P2", "timeline": "30 days", "action": "Install real-time water-level sensors at 5 critical points for monsoon early warning.", "category": "monitoring" },
+    { "priority": "P3", "timeline": "Post-monsoon", "action": "Commission comprehensive drainage capacity study. Evaluate network expansion for 2027 budget cycle.", "category": "planning" }
+  ],
+  "infrastructure_warnings": [
+    "Storm Drain SD-7 at 48% — CRITICAL failure risk during heavy rainfall event",
+    "Underpass Section 4 has no backup drainage — single point of failure for track operations",
+    "Construction debris detected in D-1 — likely from nearby unauthorized construction activity"
+  ]
+}
